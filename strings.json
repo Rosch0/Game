@@ -1,0 +1,20 @@
+
+{
+  "history1": "Witaj w grze!",
+  "history2": "Jestes smialkiem ktory wszedl do jaskini zla aby wybic wszystkie stwory",
+  "history3": "Tak naprawde jestes wiesniakiem co chcial pokazac DUZE kochonez (no ale tak jakos wyszlo)",
+  "history4": "Zabij lub badz zabity, powodzenia!",
+  "task": "Twoje zadanie: pokonac wszystkie potwory",
+  "new_round": "Nowa runda:",
+  "hp": "Twoje HP: ",
+  "choise_attact": "Ktory potwor zaatakowac? (podaj numer lub wpisz 'q' by zakonczyc gre): ",
+  "end": "Koniec gry.",
+  "enemy": "Potwor",
+  "error": "Nieprawidlowa wartosc. Sprobuj ponownie.",
+  "your_attact": "Atakujesz potwora     !",
+  "win": "Brawo, pokonales wszystkie potwory! Masz szacun na dzielni oraz status DUZYCH kochonez",
+  "lose": "Niestety, zostałeś zabity a twoja smierc i tak nikogo nie nauczy a wszyscy cię zapomną. Koniec gry.",
+  "conter": "kontratakuje!"
+
+
+}

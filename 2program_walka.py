@@ -1,5 +1,9 @@
 import random
 import time
+import json
+
+with open('2program_gra/strings.json') as user_file:
+    file_contents = json.load(user_file)
 
 player_hp = 100
 player_dmg = random.randint(5, 15)
@@ -15,39 +19,39 @@ for i in range(monster_count):
         "hp": random.randint(*monster_hp_range),
     })
 
-print("Witaj w grze!")
+print(file_contents['history1'])
 time.sleep(1)
-print("Jesteś śmiałkiem który wszedł do jaskini zła aby wybić wszystkie stwory")
+print(file_contents['history2'])
 time.sleep(3)
-print("Tak naprawdę jeśteś wieśniakiem co chciał pokazać DUŻE kochonez (no ale tak jakoś wyszło)")
+print(file_contents['history3'])
 time.sleep(3)
-print("Zabij lub bądź zabity, powodzenia!")
+print(file_contents['history4'])
 time.sleep(1)
 print(f"Twoje HP: {player_hp}")
-print("Twoje zadanie: pokonać wszystkie potwory")
+print(file_contents['task'])
 
 while len(monster_list) > 0 and player_hp > 0:
     print()
-    print("Nowa runda:")
+    print(file_contents['new_round'])
     print(f"Twoje HP: {player_hp}")
 
     for i, monster in enumerate(monster_list):
         print(f"{i+1}. {monster['name']} (HP: {monster['hp']})")
 
-    choice = input("Który potwór zaatakować? (podaj numer lub wpisz 'q' by zakończyć grę): ")
+    choice = input(file_contents['choise_attact'])
 
     if choice == "q":
-        print("Koniec gry.")
+        print(file_contents['end'])
         break
 
     try:
         choice = int(choice)
     except ValueError:
-        print("Nieprawidłowa wartość. Spróbuj ponownie.")
+        print(file_contents['error'])
         continue
 
     if choice < 1 or choice > len(monster_list):
-        print("Nieprawidłowa wartość. Spróbuj ponownie.")
+        print(file_contents['error'])
         continue
 
     monster = monster_list[choice-1]
@@ -72,6 +76,6 @@ while len(monster_list) > 0 and player_hp > 0:
     print(f"Twoje HP: {player_hp}")
 
 if len(monster_list) == 0:
-    print("Brawo, pokonałeś wszystkie potwory! Masz szacun na dzielni oraz status DUŻYCH kochonez")
+    print(file_contents['win'])
 elif player_hp <= 0:
-    print("Niestety, zostałeś zabity a twoja śmierć i tak nikogo nie nauczy a wszyscy cię zapomną. Koniec gry.")
+    print(file_contents['lose'])
